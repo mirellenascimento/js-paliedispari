@@ -1,20 +1,29 @@
+// FUNCTIONS
 function isEven(number){
   return (number % 2 == 0);
 }
 
 function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function numbersAdd(x, y){
-  return x + y;
+function clickNumber(n){
+  document.getElementById(n).addEventListener("click", function(){
+    userNumber = n;
+    document.getElementById("userHand").className = "hand-" + n;
+    console.log("user number is: ", userNumber);
+  });
 }
 
+// INPUT VARIABLES
 var userSelection;
 var userNumber;
+
+// OUTPUT VARIABLES
 var sum;
 var result = document.getElementById("final");
 
+// EVEN AND ODD BUTTONS
 var evenButton = document.getElementById("pari");
 evenButton.addEventListener("click", function(){
   userSelection = true;
@@ -29,50 +38,33 @@ oddButton.addEventListener("click", function(){
   evenButton.disabled = true;
 });
 
-document.getElementById("1").addEventListener("click", function(){
-  userNumber = 1;
-  document.getElementById("userHand").className = "hand-1";
+// SELECTED NUMBER BUTTON
+var i = 1;
+while (i<=5) {
+  userNumber = clickNumber(i);
   console.log("user number is: ", userNumber);
-});
-document.getElementById("2").addEventListener("click", function(){
-  userNumber = 2;
-  document.getElementById("userHand").className = "hand-2";
-  console.log("user number is: ", userNumber);
-});
-document.getElementById("3").addEventListener("click", function(){
-  userNumber = 3;
-  document.getElementById("userHand").className = "hand-3";
-  console.log("user number is: ", userNumber);
-});
-document.getElementById("4").addEventListener("click", function(){
-  userNumber = 4;
-  document.getElementById("userHand").className = "hand-4";
-  console.log("user number is: ", userNumber);
-});
-document.getElementById("5").addEventListener("click", function(){
-  userNumber = 5;
-  document.getElementById("userHand").className = "hand-5";
-  console.log("user number is: ", userNumber);
-});
+  i++;
+}
 
+// PLAY BUTTON
 var playButton = document.getElementById("play");
+
+// COMPUTER TURN
 playButton.addEventListener("click", function(){
-  var computerNumber = randomNumber(1, 6);
+  var computerNumber = randomNumber(1, 5);
   console.log("computer number is: ", computerNumber);
   document.getElementById("computerHand").className = "hand-" + computerNumber;
-  var sum = (computerNumber + userNumber);
+  var sum = computerNumber + userNumber;
   console.log("the total is: ", sum);
 
+  // RESULT
   if ((userSelection == true) && (isEven(sum))){
     result.innerHTML = "Pari, hai vinto!"
-  }
-  if ((userSelection == false) && (isEven(sum))){
+  } else if ((userSelection == false) && (isEven(sum))){
     result.innerHTML = "Pari, hai perso!"
-  }
-  if ((userSelection == true) && (!isEven(sum))){
+  } else if ((userSelection == true) && (!isEven(sum))){
     result.innerHTML = "Dispari, hai perso!"
-  }
-  if ((userSelection == false) && (!isEven(sum))){
+  } else {
     result.innerHTML = "Dispari, hai vinto!"
   }
 });
