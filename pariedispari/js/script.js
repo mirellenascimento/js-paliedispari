@@ -51,6 +51,7 @@ var playButton = document.getElementById("play");
 
 // COMPUTER TURN
 playButton.addEventListener("click", function(){
+  document.getElementById("hands").style.display = "block";
   var computerNumber = randomNumber(1, 5);
   console.log("computer number is: ", computerNumber);
   document.getElementById("computerHand").className = "hand-" + computerNumber;
@@ -60,11 +61,16 @@ playButton.addEventListener("click", function(){
   // RESULT
   if ((userSelection == true) && (isEven(sum))){
     result.innerHTML = "Pari, hai vinto!"
+    result.style.color = "blue";
   } else if ((userSelection == false) && (isEven(sum))){
     result.innerHTML = "Pari, hai perso!"
+    result.style.color = "red";
   } else if ((userSelection == true) && (!isEven(sum))){
     result.innerHTML = "Dispari, hai perso!"
+    result.style.color = "red";
   } else {
     result.innerHTML = "Dispari, hai vinto!"
+    result.style.color = "blue";
+
   }
 });

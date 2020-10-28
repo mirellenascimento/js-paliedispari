@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container wrapper text-center">
       <div class="row">
         <div class="col">
           <h1>Pari o dispari?</h1>
@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col">
           <h1>Scegli un numero</h1>
-          <div class="btn-toolbar" role="toolbar">
+          <div class="btn-toolbar d-flex justify-content-center" role="toolbar">
             <div class="btn-group" role="group">
               <button id="1" type="button" class="numberButton btn btn-secondary">1</button>
               <button id="2" type="button" class="numberButton btn btn-secondary">2</button>
@@ -36,18 +36,21 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div id="hands" class="container wrapper text-center">
       <div class="row">
         <div class="col">
           <h1>Chi ha vinto?</h1>
         </div>
       </div>
       <div class="row">
-        <div id="userHand" class="col">
-
+        <div class="col d-flex align-items-center justify-content-start">
+          <div id="userHand" class=""></div>
+          <h2>Player 1 = tu</h2>
         </div>
-        <div id="computerHand" class="col">
-
+        <div class="col d-flex flex-colunm align-items-center">
+          <div id="computerHand" class="">
+          </div>
+          <h2>Player 2 = computer</h2>
         </div>
       </div>
       <div class="row">

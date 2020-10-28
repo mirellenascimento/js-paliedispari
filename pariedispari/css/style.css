@@ -2,17 +2,41 @@ body{
   background-color: lightgrey;
 }
 
-
-
 .wrapper{
-  width: 70%;
-  min-height: 240px;
+  width: 60%;
+  min-height: 200px;
   margin: auto;
-  margin-top: 100px;
   background-color: white;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 5px, 5px, 2px;
+}
+
+.wrapper:first-child{
+  margin-top: 40px;
+}
+#hands{
+  margin-top: 20px;
+}
+.wrapper *{
+  margin: 5px;
+}
+
+#hands, #computerHand{
+  display: none;
+}
+
+#computerHand, #userHand{
+  display: inline-block;
+  width: 50%;
+  height: 220px;
+}
+
+#computerHand, #final{
+  animation-name: appear;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
 }
 
 [class*="hand-"]{
@@ -20,8 +44,8 @@ body{
   background-color: white;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 150px;
-  height: 450px;
+  width: 100px;
+  height: 150px;
 }
 
 .hand-1{
@@ -38,4 +62,10 @@ body{
 }
 .hand-5{
   background-image: url(../images/5.png);
+}
+
+@keyframes appear {
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
 }
