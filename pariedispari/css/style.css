@@ -1,0 +1,41 @@
+body{
+  background-color: lightgrey;
+}
+
+
+
+.wrapper{
+  width: 70%;
+  min-height: 240px;
+  margin: auto;
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 5px, 5px, 2px;
+}
+
+[class*="hand-"]{
+  display: inline-block;
+  background-color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 450px;
+}
+
+.hand-1{
+  background-image: url(../images/1.png);
+}
+.hand-2{
+  background-image: url(../images/2.png);
+}
+.hand-3{
+  background-image: url(../images/3.png);
+}
+.hand-4{
+  background-image: url(../images/4.png);
+}
+.hand-5{
+  background-image: url(../images/5.png);
+}
